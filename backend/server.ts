@@ -1,4 +1,5 @@
 /// <reference path="./src/types/express.d.ts" />
+import path from "path";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -7,7 +8,7 @@ import postRoutes from "./src/routes/postRoutes";
 import authRoutes from "./src/routes/authRoutes";
 import errorHandler from "./src/middleware/errorHandler";
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 connectDB();
 
 const app = express();
